@@ -103,4 +103,7 @@ h3 {
   position: relative;
   top: 3px;
 }
-
+#pause{
+  font-size: 40px;
+  display: none;
+}

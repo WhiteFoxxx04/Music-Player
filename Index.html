@@ -7,18 +7,18 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
     <body>
         <div class="music-player-container">
             <!-- Songs -->
             <div class="img-container">
-                <img src="/Album-Art/Eminem1.png" alt="Album Art"/>
+                <img src="Album-Art/Eminem1.png" alt="Album Art"/>
             </div>
             <h2 id="title"></h2>
             <h3 id="artist"></h3>
-            <audio> 
-                <source src="/Music/Little Engine.mp3" type="audio/mp3"/>
+            <audio id="myAudio"> 
+                <source src="Music/Little Engine.mp3" type="audio/mp3"/>
             </audio>
             <!-- Progress Bar -->
             <div class="progress-container" id="progress-container">
@@ -32,8 +32,25 @@
             <div class="player-controls">
                 <i class="fas fa-backward" id="prev" title="Previous"></i>
                 <i class="fas fa-play main-button" id="play" title="Play"></i>
+                <i class="fas fa-pause"  id="pause" title="Pause"></i>
                 <i class="fas fa-forward" id="next" title="Next"></i>
               </div>
         </div>
+
+        <script>
+            const audio = document.querySelector('#myAudio')
+            const play = document.querySelector('#play')
+            const pause = document.querySelector('#pause')
+            play.addEventListener('click',()=>{
+                audio.play()
+                play.style.display ="none"
+                pause.style.display ="inline"
+            })
+            pause.addEventListener('click',()=>{
+                audio.pause()
+                play.style.display = "inline"
+                pause.style.display = "none"
+            })
+        </script>
     </body> 
 </html>
